@@ -66,7 +66,8 @@ export default function Game() {
   }
 
   function jumpTo(nextMove) {
-    // TODO
+    setCurrentMove(nextMove);
+    setXIsNext(nextMove % 2 === 0);
   }
 
   const moves = history.map((squares, move) => {
@@ -79,7 +80,7 @@ export default function Game() {
     return (
       <li key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
-    </li>
+      </li>
     );
   });
 
